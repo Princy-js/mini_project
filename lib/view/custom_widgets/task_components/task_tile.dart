@@ -24,12 +24,12 @@ class TaskTile extends StatelessWidget {
       padding: const EdgeInsets.only(left:20,right: 20,top: 16),
       child: Slidable(
         endActionPane: ActionPane(motion: StretchMotion(), children: [
-          // SlidableAction(
-          //         onPressed:onEdit,
-          //         borderRadius: BorderRadius.circular(12),
-          //         backgroundColor:Colors.grey.shade50,
-          //         icon: Icons.edit,
-          //       ),
+          SlidableAction(
+                  onPressed:onEdit,
+                  borderRadius: BorderRadius.circular(12),
+                  backgroundColor:Colors.grey.shade50,
+                  icon: Icons.edit,
+                ),
                 SlidableAction(
                   onPressed: onDelete,
                   borderRadius: BorderRadius.circular(12),

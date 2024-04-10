@@ -9,7 +9,7 @@ void main() async{
   await Hive.initFlutter();
 
   //register adapter for todo
-  Hive.registerAdapter(TodoModelAdapter());
+  Hive.registerAdapter<TodoModel>(TodoModelAdapter());
   
   //open box for todo
   var mytodobox = await Hive.openBox('todoBox');

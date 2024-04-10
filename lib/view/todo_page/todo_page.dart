@@ -19,14 +19,11 @@ class _ToDoPageState extends State<ToDoPage> {
 
 @override
   void initState() {
-    loadDataFromDB();
+    td_controller.loadData();
     super.initState();
   }
-  //function load data
-  loadDataFromDB() async{
-    final td_controller = TodoController();
-    await td_controller.loadData();
-  }
+ 
+ 
 
   //object creation for the controller page
   final td_controller = TodoController();
@@ -36,6 +33,7 @@ class _ToDoPageState extends State<ToDoPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(td_controller.todoList);
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.black12,
@@ -104,11 +102,12 @@ class _ToDoPageState extends State<ToDoPage> {
       });
   }
 
- //to sav ethe task 
+ //to save the task 
   void todoSave() {
    setState(() {
       td_controller.addTodo(
-      TodoModel(todo: todoController.text,
+      TodoModel(
+          todo: todoController.text,
        status: false));
       });
    todoController.clear();
