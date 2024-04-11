@@ -55,7 +55,7 @@ class TaskTile extends StatelessWidget {
                 title: Text(taskName,
                 style:GoogleFonts.laila(
                   color: Colors.white,
-                  decorationThickness: 2.8,
+                  decorationThickness: 1.8,
                   decorationStyle:TextDecorationStyle.wavy,
                   decoration:taskStatus == true
                   ?TextDecoration.lineThrough 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_app/controller/todo_controller.dart';
+import 'package:my_app/controller/todo_controller/todo_controller.dart';
 import 'package:my_app/model/todomodel/todo_model.dart';
 import 'package:my_app/view/custom_widgets/bottom_bar/bottom_bar.dart';
 import 'package:my_app/view/custom_widgets/bottom_sheet/todo_bottomsheet.dart';
@@ -25,7 +25,7 @@ class _ToDoPageState extends State<ToDoPage> {
  
  
 
-  //object creation for the controller page
+  //object for the controller page
   final td_controller = TodoController();
 
   //controller for the textfield
@@ -141,11 +141,17 @@ class _ToDoPageState extends State<ToDoPage> {
        });
   }
 
-     //to save the edited task
+   //to save the edited task
       newTodoSave(int index) {
-        td_controller.todoList[index].todo;
-        setState(() {});
-        Navigator.pop(context);
+        setState(() {
+          td_controller.editTodo(
+            index, TodoModel(
+              todo: todoController.text, 
+              status: td_controller.todoList[index].status
+              )
+            );
+        });
+      Navigator.pop(context);
       }
   
   //to delete the task
