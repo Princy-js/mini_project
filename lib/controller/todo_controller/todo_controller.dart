@@ -23,7 +23,7 @@ class TodoController {
     final retrievedData = mytodobox.get('TODOLIST') ?? [];
     todoList = retrievedData.cast<TodoModel>(); // Type casting for safety
   }
-  
+
   //to edit the existing todotile
   void editTodo(int index, TodoModel updatedTodo) {
     todoList[index] = updatedTodo;

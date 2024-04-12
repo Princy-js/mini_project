@@ -9,7 +9,7 @@ class MyBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.black12,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12), topRight: Radius.circular(12))),
@@ -25,7 +25,7 @@ class MyBottomBar extends StatelessWidget {
             color: Colors.grey[100],
             onPressed: () {
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => ToDoPage()));
+                  .push(MaterialPageRoute(builder: (context) => const ToDoPage()));
             },
             child: Text(
               'TODO',
@@ -38,7 +38,7 @@ class MyBottomBar extends StatelessWidget {
             color: Colors.grey[100],
             onPressed: () {
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => NotePage()));
+                  .push(MaterialPageRoute(builder: (context) => const NotePage()));
             },
             child: Text(
               'NOTES',
